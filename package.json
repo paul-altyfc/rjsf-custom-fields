@@ -1,0 +1,20 @@
+{
+  "name": "custom-fields-example",
+  "version": "1.0.0",
+  "description": "Example of using custom fields in react-jsonschema-form. This one pulls in bootstrap and magma for styling via the public/index.html file.",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-jsonschema-form": "1.0.3",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
