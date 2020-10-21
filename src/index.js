@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Form from 'react-jsonschema-form'
 
+import superagent from 'superagent';
+// import { connect } from "react-redux";
+// import * as actions from "../store/actions";
+
+
 import './App.css'
 
 /**
@@ -58,11 +63,18 @@ class AddressForm extends Component {
     evt.preventDefault()
     // Imagine an XHR call to lookup zip based on address info
     // Contrived, but it makes the point
-    setTimeout(() => {
-      this.setState({ postalCode: '08007' }, () =>
-        this.props.onChange(this.state)
-      )
-    }, 500)
+    // setTimeout(() => {
+    //   this.setState({ postalCode: '08007' }, () =>
+    //     this.props.onChange(this.state)
+    //   )
+    // }, 500)
+    let url = "https://www.chinmayamission.com/wp-json/gcmw/v1/centres";
+    return superagent.get(url).then(data => {
+      console.log(data.body[0].zip)
+      // console.log("I am in people actions", data.body);
+      // dispatch(getData(data.body));
+    });
+
   }
 
   render() {
@@ -125,7 +137,7 @@ const schema = {
     name: {
       type: 'string'
     },
-    numberEnum: {
+    dropdown: {
       type: "number",
       title: "Dropdown with Meaningful values",
       enum: [
