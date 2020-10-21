@@ -125,6 +125,17 @@ const schema = {
     name: {
       type: 'string'
     },
+    numberEnum: {
+      type: "number",
+      title: "Dropdown with Meaningful values",
+      enum: [
+        1,
+        2,
+        3,
+        4,
+      ],
+      enumNames: ["one", "two", "three", "four"],
+    },
     address: {
       type: 'object',
       title: 'Address',
